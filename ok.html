@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Event Registration</title></head>
+<body>
+  <h2>Event Registration</h2>
+  <input id="name" placeholder="Name"><br>
+  <input id="email" placeholder="Email"><br>
+  <select id="event">
+    <option>Hackathon</option>
+    <option>Workshop</option>
+  </select><br>
+  <button id="btn" onclick="register()">Register</button>
+  <p id="msg"></p>
+
+  <script>
+    function register() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var ev = document.getElementById("event").value;
+      var msg = document.getElementById("msg");
+      if (name === "" || !email.includes("@")) {
+        msg.innerText = "Invalid input";
+      } else {
+        msg.innerText = "Registered " + name + " for " + ev;
+      }
+    }
+  </script>
+</body>
+</html>
